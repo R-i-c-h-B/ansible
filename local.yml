@@ -7,4 +7,5 @@
     dnf: name=iotop
   - name: Install chromium
     dnf: name=chromium
-    
+  - name: Install code
+    dnf: name=code 
