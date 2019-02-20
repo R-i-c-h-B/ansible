@@ -1,12 +1,19 @@
 - hosts: localhost
   become: true
   tasks:
+  - name: add MS Repo
+  yum_repository:
+    name: MS RHEL YUM
+    description: MS RHEL YUM REPO FOR RHEL 7
+    baseurl: https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
+    
   - name: Install Packages 
     dnf: name={{item}}
     with_items:
     - htop
     - iotop
     - chromium
+    - code
     # vscode from microsoft here -
-    - https://go.microsoft.com/fwlink/?LinkID=760681
+    #- https://go.microsoft.com/fwlink/?LinkID=760681
     
