@@ -2,10 +2,10 @@
   become: true
   tasks:
   - name: add MS Repo
-  yum_repository:
-    name: MS RHEL YUM
-    description: MS RHEL YUM REPO FOR RHEL 7
-    baseurl: https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
+    yum_repository:
+      name: MS RHEL YUM
+      description: MS RHEL YUM REPO FOR RHEL 7
+      baseurl: https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
     
   - name: Install Packages 
     dnf: name={{item}}
