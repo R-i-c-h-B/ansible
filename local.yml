@@ -1,11 +1,11 @@
 - hosts: localhost
   become: true
   tasks:
-  - name: Install htop
-    dnf: name=htop
-  - name: Install iotop
-    dnf: name=iotop
-  - name: Install chromium
-    dnf: name=chromium
-  - name: Install code
-    dnf: name=code 
+  - name: Install Packages 
+    dnf: name={{item}}
+    with_items:
+    - htop
+    - iotop
+    - chromium
+    - code
+    
