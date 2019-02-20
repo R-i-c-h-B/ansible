@@ -5,7 +5,7 @@
     yum_repository:
       name: MS-RHEL-7-YUM
       description: MS RHEL YUM REPO FOR RHEL 7
-      baseurl: https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
+      baseurl: https://packages.microsoft.com/config/fedora/27/packages-microsoft-prod.rpm
       enabled: 1
       metadata_expire: 21600
       repo_gpgcheck: 0
