@@ -3,6 +3,8 @@
   tasks:
   - name: Install htop
     dnf: name=htop
+  - name: Install iotop
+    dnf: name=iotop
   - name: Install chromium
     dnf: name=chromium
     
