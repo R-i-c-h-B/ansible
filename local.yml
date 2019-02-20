@@ -3,7 +3,7 @@
   tasks:
   - name: add MS Repo
     yum_repository:
-      name: MS RHEL YUM
+      name: MS-RHEL-7-YUM
       description: MS RHEL YUM REPO FOR RHEL 7
       baseurl: https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
     
