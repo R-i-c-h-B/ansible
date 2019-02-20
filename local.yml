@@ -14,7 +14,7 @@
     
   - name: Install Packages 
     dnf: 
-      name: ['htop', 'iotop', 'chromium', 'https://go.microsoft.com/fwlink/?LinkID=760681']
+      name: ['htop', 'iotop', 'chromium', 'https://go.microsoft.com/fwlink/?LinkID=760681', 'pip3']
     # vscode from microsoft here -
     #- https://go.microsoft.com/fwlink/?LinkID=760681
     
