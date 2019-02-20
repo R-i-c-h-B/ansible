@@ -7,6 +7,6 @@
     - htop
     - iotop
     - chromium
-    - code
+    # vscode from microsoft here -
     - https://go.microsoft.com/fwlink/?LinkID=760681
     
