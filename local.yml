@@ -1,20 +1,20 @@
 - hosts: localhost
   become: true
   tasks:
-  - name: add MS Repo
-    yum_repository:
-      name: mslinux
-      description: microsoft for linux
-      baseurl: https://packages.microsoft.com/config/fedora/27/packages-microsoft-prod.rpm
-      enabled: 1
-      repo_gpgcheck: 0
-      gpgcheck: 1
-      gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+  #- name: add MS Repo
+#    yum_repository:
+#      name: mslinux
+#      description: microsoft for linux
+#      baseurl: https://packages.microsoft.com/config/fedora/27/packages-microsoft-prod.rpm
+#      enabled: 1
+#      repo_gpgcheck: 0
+#      gpgcheck: 1
+#      gpgkey: https://packages.microsoft.com/keys/microsoft.asc
       
     
   - name: Install Packages 
     dnf: 
-      name: ['htop', 'iotop', 'chromium', 'code']
+      name: ['htop', 'iotop', 'chromium', 'https://go.microsoft.com/fwlink/?LinkID=760681']
     # vscode from microsoft here -
     #- https://go.microsoft.com/fwlink/?LinkID=760681
     
