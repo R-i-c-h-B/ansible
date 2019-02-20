@@ -8,7 +8,8 @@
       baseurl: https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
     
   - name: Install Packages 
-    dnf: name: ['htop', 'iotop', 'chromium', 'code']
+    dnf: 
+      name: ['htop', 'iotop', 'chromium', 'code']
     # vscode from microsoft here -
     #- https://go.microsoft.com/fwlink/?LinkID=760681
     
