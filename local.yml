@@ -1,4 +1,4 @@
-- hosts: localhost
+- hosts: localhost ansible_connection=local ansible_python_interpreter=/usr/bin/python3
   become: true
   tasks:
   #- name: add MS Repo
