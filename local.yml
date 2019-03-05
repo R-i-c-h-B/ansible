@@ -18,3 +18,14 @@
     # vscode from microsoft here -
     #- https://go.microsoft.com/fwlink/?LinkID=760681
     
+#######################
+# GNOME Scroll Bars.
+#cd ~/.config/gtk-4.0/
+# or maybe 3.0
+# touch gtk.css
+# vi gtk.css
+#scrollbar {
+#    min-width: 15px;
+#    min-height: 15px;
+#}
+#########################
