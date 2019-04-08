@@ -12,11 +12,45 @@
 #      gpgkey: https://packages.microsoft.com/keys/microsoft.asc
       
     
-  - name: Install Packages 
+
+
+- name: Install python-dnf module
+    dnf:
+      name: python-dnf
+      state: present
+
+  - name: Remove existing unofficial Docker packages
+    dnf:
+      name: "{{ item }}"
+      state: absent
+    with_items:
+      - docker
+      - docker-common
+      - container-selinux
+      - docker-selinux
+
+  - name: Install dnf-plugins-core to manage DNF repository
+    dnf:
+      name:  dnf-plugins-core
+      state: present
+
+  - name: Add docker repo
+    shell:  'dnf config-manager \
+      --add-repo \
+      https://download.docker.com/linux/fedora/docker-ce.repo'
+
+  
+- name: Install Packages 
     dnf: 
-      name: ['htop', 'iotop', 'chromium', 'https://go.microsoft.com/fwlink/?LinkID=760681', 'docker-ce']
+      name: ['htop', 'iotop', 'chromium', 'https://go.microsoft.com/fwlink/?LinkID=760681', 'docker-ce', 'docker-ce-cli', 'containerd.io']
     # vscode from microsoft here -
     #- https://go.microsoft.com/fwlink/?LinkID=760681
+
+
+  - name: Start docker service
+    systemd:
+      state: started
+      name: docker
     
 #######################
 # GNOME Scroll Bars.
