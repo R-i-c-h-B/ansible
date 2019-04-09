@@ -1,7 +1,7 @@
 ---
 - hosts: localhost
   become: true
-  become_method: sudo
+# become_method: sudo
   tasks:
   #- name: add MS Repo
 #    yum_repository:
