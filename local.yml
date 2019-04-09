@@ -12,7 +12,7 @@
 #      gpgkey: https://packages.microsoft.com/keys/microsoft.asc
       
 - name: Add docker repo
-    shell: 'dnf install python-dnf'
+    shell: dnf install python-dnf
 
 - name: Install Core Packages 
     dnf: 
