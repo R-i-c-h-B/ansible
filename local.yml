@@ -14,13 +14,9 @@
 #      gpgkey: https://packages.microsoft.com/keys/microsoft.asc
 #'https://go.microsoft.com/fwlink/?LinkID=760681',
       
-  - name: Add python-dnf
-    dnf: 
-      name: 'python-dnf'
-
   - name: Install Core Packages 
     dnf:
-      name: ['htop', 'iotop', 'chromium', 'dnf-plugins-core']
+      name: ['python-dnf','htop', 'iotop', 'chromium', 'dnf-plugins-core']
 
   - name: Remove existing unofficial Docker packages
     dnf: 
