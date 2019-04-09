@@ -14,7 +14,8 @@
 #      gpgkey: https://packages.microsoft.com/keys/microsoft.asc
       
   - name: Add python-dnf
-    dnf: 'python-dnf'
+    dnf: 
+      name: 'python-dnf'
 
   - name: Install Core Packages 
     dnf:
