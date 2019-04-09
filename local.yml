@@ -16,6 +16,7 @@
       
   - name: Install Core Packages 
     dnf:
+      state: latest
       name: ['python-dnf','htop', 'iotop', 'chromium', 'dnf-plugins-core']
 
   - name: Remove existing unofficial Docker packages
@@ -33,12 +34,8 @@
 
   - name: Install Docker 
     dnf: 
+      state: present
       name: ['docker-ce', 'docker-ce-cli', 'containerd.io']
-
-  - name: Start docker service
-    systemd:
-      state: started
-      name: docker
 
   - name: set microsoft repo
     yum_repository:
@@ -51,8 +48,24 @@
   - name: install vscode
     dnf:
       name: code
+      state: present
+
+  - name: Autoremove unneeded packages installed as dependencies
+    dnf:
+      autoremove: yes
+
+  - name: upgrade all packages
+    dnf:
+      name: "*"
       state: latest
-    
+
+
+
+  - name: Start docker service
+    systemd:
+      state: started
+      name: docker
+
 #######################
 # GNOME Scroll Bars.
 #cd ~/.config/gtk-4.0/
