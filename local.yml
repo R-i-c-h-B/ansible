@@ -12,6 +12,7 @@
 #      repo_gpgcheck: 0
 #      gpgcheck: 1
 #      gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+#'https://go.microsoft.com/fwlink/?LinkID=760681',
       
   - name: Add python-dnf
     dnf: 
@@ -19,7 +20,7 @@
 
   - name: Install Core Packages 
     dnf:
-      name: ['htop', 'iotop', 'chromium', 'https://go.microsoft.com/fwlink/?LinkID=760681', 'dnf-plugins-core']
+      name: ['htop', 'iotop', 'chromium', 'dnf-plugins-core']
 
   - name: Remove existing unofficial Docker packages
     dnf: 
@@ -42,6 +43,22 @@
     systemd:
       state: started
       name: docker
+
+  - name: set microsoft repo
+    yum_repository:
+      name: code
+      description: vscode
+      file: vscode
+      gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+      baseurl: https://packages.microsoft.com/yumrepos/vscode
+
+  - name: install vscode
+    dnf:
+      name: code
+      state: present
+    when:
+      - ansible_pkg_mgr == "dnf"
+      - vscode_install
     
 #######################
 # GNOME Scroll Bars.
