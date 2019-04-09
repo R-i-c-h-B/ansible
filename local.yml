@@ -11,14 +11,15 @@
 #      gpgcheck: 1
 #      gpgkey: https://packages.microsoft.com/keys/microsoft.asc
       
-    
+- name: Add docker repo
+    shell: 'dnf install python-dnf'
 
 - name: Install Core Packages 
-    dnf:
-      name: ['htop', 'iotop', 'chromium', 'https://go.microsoft.com/fwlink/?LinkID=760681', 'dnf-plugins-core', 'python-dnf']
+    dnf: 
+      name: ['htop', 'iotop', 'chromium', 'https://go.microsoft.com/fwlink/?LinkID=760681', 'dnf-plugins-core']
 
 - name: Remove existing unofficial Docker packages
-    dnf:
+    dnf: 
       name: ['docker', 'docker-common', 'container-selinux', 'docker-selinux']
       state: absent
 
