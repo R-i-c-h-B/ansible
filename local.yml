@@ -51,7 +51,7 @@
   - name: install vscode
     dnf:
       name: code
-      state: present
+      state: latest
     
 #######################
 # GNOME Scroll Bars.
