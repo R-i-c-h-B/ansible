@@ -56,9 +56,6 @@
     dnf:
       name: code
       state: present
-    when:
-      - ansible_pkg_mgr == "dnf"
-      - vscode_install
     
 #######################
 # GNOME Scroll Bars.
